@@ -1,0 +1,63 @@
+.public-container{
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
+}
+/*公共头部*/
+.public-header{
+	height: 110px;
+}
+/*公共头部logo*/
+.public-header .header-logo{
+	float: left;
+	margin-top: 40px;
+	background:url("../img/public-header-logo.png") no-repeat;
+}
+.public-header .header-logo a{
+	width: 182px;
+	height: 54px;
+}
+/*公共头部导航*/
+.public-header .header-nav{
+	float: right;
+	margin-top: 44px;
+}
+.public-header .header-nav .item{
+	display: inline-block;
+	margin-left: 50px;
+}
+.public-header .header-nav .item a{
+	font-size: 14px;
+	color:#3b3b3b;
+}
+.public-header .header-nav .item a:hover{
+	text-decoration: underline;
+}
+/*公共尾部*/
+.public-footer{
+	height: 218px;
+	padding-top: 100px;
+	margin-top: 100px;
+	background-color: #3b3b3b;
+}
+/*公共尾部logo*/
+.public-footer .footer-logo{
+	width: 182px;
+	height: 55px;
+	margin-top: -10px;
+	background-image: url(../img/public-footer-logo.png);
+}
+.public-footer .footer-col{
+	width: 230px;
+	float: left;
+	margin-right: 60px;
+	font-size: 16px;
+	color: #fff;
+	line-height: 1.8;
+}
+.public-footer .footer-col a{
+	color: #fff;
+}
+.public-footer .footer-col:last-child{
+	margin-right: 0;
+}
