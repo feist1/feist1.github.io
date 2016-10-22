@@ -1,0 +1,51 @@
+.tuijianitem{
+    width: 23%;
+    display: inline-block;
+    margin-left:5px; 
+
+}
+.shop{
+    box-sizing: border-box;
+    padding: 10px;
+
+}
+.img{
+    width: 100%;
+    }
+.info{
+    text-align: center;
+    padding: 5px 0;
+    background: lightgray;
+}
+.tuijianitem image{
+    width: 100%;
+}
+.tuijianitem .price{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    background: lightgray;
+    
+}
+.amount,.shopNum{
+    text-align: center;
+}
+.amount{
+    padding-top:20px; 
+}
+.num,.reduce,.add{
+    display: inline-block;
+    width: 50px;
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid darkgray;
+
+}
+.num{
+    margin: 0 10px;
+}
+

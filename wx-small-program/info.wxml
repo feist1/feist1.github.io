@@ -1,0 +1,19 @@
+<view class="shop">
+    <image class="img" src="{{shop.imgUrl}}"></image>
+    <view class="info">{{shop.info}}</view>
+    <view>单价：{{shop.price}}￥</view>
+</view>
+<view>
+    <view class="shopNum"><text class="reduce" bindtap="reduceNum">-</text><text class="num">{{num}}</text><text class="add" bindtap="addNum">+</text></view>
+    <view class="amount">共{{amount}}￥</view>
+    <button class="addToshopCar">加入购物车</button>
+</view>
+<view>类似商品</view>
+<view class="tuijian">
+<view class="tuijianitem" bindtap="navgateInfo" wx:for="{{shops}}" data-id="{{item.id}}">
+<image src="{{item.imgUrl}}"></image>
+<text class="price">{{item.price}}￥</text>
+
+
+</view>
+</view>

@@ -1,0 +1,21 @@
+<view class="focus">
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+        <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150"></image>
+        </swiper-item>
+    </block>
+</swiper>
+</view>
+<view class="newShop">
+最新上架
+</view>
+<view class="shop" wx:for="{{shops}}">
+    <view data-id="{{item.id}}" bindtap="navigateInfo">
+      <image class="shopImg" src="{{item.imgUrl}}"></image>
+      <view class="shopInfoAndPrice">
+          <text class="info">{{item.info}}</text>
+          <text class="price">价格：{{item.price}}￥</text>
+      </view>
+  </view>
+</view>
