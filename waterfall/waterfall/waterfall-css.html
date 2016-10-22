@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <style>
+        .container{
+            -webkit-column-width: 160px;
+            -moz-column-width: 160px;
+            -webkit-column-gap:5px;
+            -moz-column-gap:5px;
+        }
+        /*数据块、砖块*/
+        .container div{
+            width:160px;
+            margin:4px 0;
+        }
+        .container div img{
+            width: 100%;
+        }
+    </style>
+    <title>css做瀑布流布局</title>
+</head>
+<body>
+<div class="container">
+    <div><img src="../waterfall-img/P_00.jpg" alt="00"/></div>
+    <div><img src="../waterfall-img/P_01.jpg" alt="01"/></div>
+    <div><img src="../waterfall-img/P_02.jpg" alt="02"/></div>
+    <div><img src="../waterfall-img/P_03.jpg" alt="03"/></div>
+    <div><img src="../waterfall-img/P_04.jpg" alt="04"/></div>
+    <div><img src="../waterfall-img/P_05.jpg" alt="05"/></div>
+    <div><img src="../waterfall-img/P_06.jpg" alt="06"/></div>
+    <div><img src="../waterfall-img/P_07.jpg" alt="07"/></div>
+    <div><img src="../waterfall-img/P_08.jpg" alt="08"/></div>
+    <div><img src="../waterfall-img/P_09.jpg" alt="09"/></div>
+    <div><img src="../waterfall-img/P_010.jpg" alt="10"/></div>
+    <div><img src="../waterfall-img/P_011.jpg" alt="11"/></div>
+    <div><img src="../waterfall-img/P_012.jpg" alt="12"/></div>
+    <div><img src="../waterfall-img/P_013.jpg" alt="13"/></div>
+    <div><img src="../waterfall-img/P_014.jpg" alt="14"/></div>
+    <div><img src="../waterfall-img/P_015.jpg" alt="15"/></div>
+    <div><img src="../waterfall-img/P_016.jpg" alt="16"/></div>
+    <div><img src="../waterfall-img/P_017.jpg" alt="17"/></div>
+    <div><img src="../waterfall-img/P_018.jpg" alt="18"/></div>
+    <div><img src="../waterfall-img/P_019.jpg" alt="18"/></div>
+</div>
+<!--
+    css3之多列属性
+    IE10+和opera支持多列属性，FF和chrome需加前缀
+    column-count 属性规定元素应该被分隔的列数
+    Internet Explorer 不支持 column-count 属性
+    -moz-column-count:3; 	/* Firefox */
+    -webkit-column-count:3; /* Safari 和 Chrome */
+    column-count:3;
+    column-gap 属性规定列之间的间隔
+    -moz-column-gap:40px;		/* Firefox */
+    -webkit-column-gap:40px;	/* Safari 和 Chrome */
+    column-gap:40px;
+    column-rule 属性设置列之间的宽度、样式和颜色规则。
+    -moz-column-rule:3px outset #ff0000;	/* Firefox */
+    -webkit-column-rule:3px outset #ff0000;	/* Safari and Chrome */
+    column-rule:3px outset #ff0000;
+    除了这些常用的还有诸多属性...
+-->
+</body>
+</html>
