@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            line-height: 1.8;
+        }
+        li{
+            list-style: none;
+        }
+        #content{
+            width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #content h1{
+            color: #66F4DF;
+        }
+        #content .item{
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px dotted #08b;
+        }
+        #content .item h3{
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 1px solid #08b;
+            margin-bottom: 10px;
+        }
+        #content .item li{
+            display: inline;
+            margin-right: 10px;
+        }
+        #content .item a img{
+            width: 230px;
+            height: 230px;
+            border: 0;
+        }
+        #menu{
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            margin-left: 400px;
+        }
+        /*/!*IE6 解决跳变问题*!/
+        *html,*body{
+            background-image: url(about:blank);
+            background-attachment: fixed;
+        }
+        /!*IE6 hack IE6不支持position：fixed属性*!/
+        * html #menu{
+            position: absolute;
+            top:expression(((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');
+        }*/
+        #menu li a{
+            display: block;
+            margin: 5px 0;
+            font-size: 14px;
+            font-weight: bold;
+            width: 80px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+        }
+        #menu li a:hover,
+        #menu li a.current{
+            color: #fff;
+            background-color: #08b;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="#item1" class="current">1F 男装</a></li>
+            <li><a href="#item2">2F 女装</a></li>
+            <li><a href="#item3">3F 童装</a></li>
+            <li><a href="#item4">4F 玩具</a></li>
+            <li><a href="#item5">5F 母婴</a></li>
+        </ul>
+    </div>
+<div id="content">
+    <h1>地狗购物网</h1>
+    <div id="item1" class="item">
+        <h3>1F 男装</h3>
+        <ul>
+            <li><a href="#"><img src="../hx-img/1F.jpg" alt="01"/></a></li>
+            <li><a href="#"><img src="../hx-img/1F.jpg" alt="01"/></a></li>
+            <li><a href="#"><img src="../hx-img/1F.jpg" alt="01"/></a></li>
+            <li><a href="#"><img src="../hx-img/1F.jpg" alt="01"/></a></li>
+            <li><a href="#"><img src="../hx-img/1F.jpg" alt="01"/></a></li>
+            <li><a href="#"><img src="../hx-img/1F.jpg" alt="01"/></a></li>
+            <li><a href="#"><img src="../hx-img/1F.jpg" alt="01"/></a></li>
+            <li><a href="#"><img src="../hx-img/1F.jpg" alt="01"/></a></li>
+            <li><a href="#"><img src="../hx-img/1F.jpg" alt="01"/></a></li>
+        </ul>
+    </div>
+    <div id="item2" class="item">
+        <h3>2F 女装</h3>
+        <ul>
+            <li><a href="#"><img src="../hx-img/2F.jpg" alt="02"/></a></li>
+            <li><a href="#"><img src="../hx-img/2F.jpg" alt="02"/></a></li>
+            <li><a href="#"><img src="../hx-img/2F.jpg" alt="02"/></a></li>
+            <li><a href="#"><img src="../hx-img/2F.jpg" alt="02"/></a></li>
+            <li><a href="#"><img src="../hx-img/2F.jpg" alt="02"/></a></li>
+            <li><a href="#"><img src="../hx-img/2F.jpg" alt="02"/></a></li>
+            <li><a href="#"><img src="../hx-img/2F.jpg" alt="02"/></a></li>
+            <li><a href="#"><img src="../hx-img/2F.jpg" alt="02"/></a></li>
+            <li><a href="#"><img src="../hx-img/2F.jpg" alt="02"/></a></li>
+        </ul>
+    </div>
+    <div id="item3" class="item">
+        <h3>3F 童装</h3>
+        <ul>
+            <li><a href="#"><img src="../hx-img/3F.jpg" alt="03"/></a></li>
+            <li><a href="#"><img src="../hx-img/3F.jpg" alt="03"/></a></li>
+            <li><a href="#"><img src="../hx-img/3F.jpg" alt="03"/></a></li>
+            <li><a href="#"><img src="../hx-img/3F.jpg" alt="03"/></a></li>
+            <li><a href="#"><img src="../hx-img/3F.jpg" alt="03"/></a></li>
+            <li><a href="#"><img src="../hx-img/3F.jpg" alt="03"/></a></li>
+            <li><a href="#"><img src="../hx-img/3F.jpg" alt="03"/></a></li>
+            <li><a href="#"><img src="../hx-img/3F.jpg" alt="03"/></a></li>
+            <li><a href="#"><img src="../hx-img/3F.jpg" alt="03"/></a></li>
+        </ul>
+    </div>
+    <div id="item4" class="item">
+        <h3>4F 玩具</h3>
+        <ul>
+            <li><a href="#"><img src="../hx-img/4F.png" alt="04"/></a></li>
+            <li><a href="#"><img src="../hx-img/4F.png" alt="04"/></a></li>
+            <li><a href="#"><img src="../hx-img/4F.png" alt="04"/></a></li>
+            <li><a href="#"><img src="../hx-img/4F.png" alt="04"/></a></li>
+            <li><a href="#"><img src="../hx-img/4F.png" alt="04"/></a></li>
+            <li><a href="#"><img src="../hx-img/4F.png" alt="04"/></a></li>
+            <li><a href="#"><img src="../hx-img/4F.png" alt="04"/></a></li>
+            <li><a href="#"><img src="../hx-img/4F.png" alt="04"/></a></li>
+            <li><a href="#"><img src="../hx-img/4F.png" alt="04"/></a></li>
+        </ul>
+    </div>
+    <div id="item5" class="item">
+        <h3>5F 母婴</h3>
+        <ul>
+            <li><a href="#"><img src="../hx-img/5F.jpg" alt="05"/></a></li>
+            <li><a href="#"><img src="../hx-img/5F.jpg" alt="05"/></a></li>
+            <li><a href="#"><img src="../hx-img/5F.jpg" alt="05"/></a></li>
+            <li><a href="#"><img src="../hx-img/5F.jpg" alt="05"/></a></li>
+            <li><a href="#"><img src="../hx-img/5F.jpg" alt="05"/></a></li>
+            <li><a href="#"><img src="../hx-img/5F.jpg" alt="05"/></a></li>
+            <li><a href="#"><img src="../hx-img/5F.jpg" alt="05"/></a></li>
+            <li><a href="#"><img src="../hx-img/5F.jpg" alt="05"/></a></li>
+            <li><a href="#"><img src="../hx-img/5F.jpg" alt="05"/></a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript" src="../lib/jquery/jquery.js"></script>
+<!--<script type="text/javascript">
+    // 1. 添加滚动监听
+    // 2. 获得滚动的距离
+    // 3. 获得左侧的距顶高度
+    // 4. 将高度进行判断
+    // 5. 获取导航里的current属性
+    // 6. 删除及添加
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            var menu = $('#menu');
+            var items = $('#content').find('.item');
+            var top = $(document).scrollTop();
+            var currentId = ""; //滚动条现在所在位置的item id
+            items.each(function(){
+                var that=$(this);
+                if(top>that.offset().top-100){
+                    currentId = '#'+that.attr('id');
+                }else{
+                    return false;
+                }
+            });
+            var currentLink = menu.find('.current');
+            if(currentId&&currentLink.attr('href')!=currentId){
+                currentLink.removeClass('current');
+                menu.find('[href='+currentId+']').addClass('current');
+            }
+//            console.log(top);
+        });
+    });
+</script>-->
+<script type="text/javascript">
+    //根据ClassName获取元素（当元素类名多时将失效）
+    function getByClassName(obj,cls){
+        var elements = obj.getElementsByTagName('*');
+        var result = [];
+        for(var i=0;i<elements.length;i++){
+            if(elements[i].className == cls){
+                result.push(elements[i]);
+            }
+        }
+        return result;
+    }
+
+    function hasClass(obj, cls){
+        return obj.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+    }
+
+    function removeClass(obj,cls){
+        if(hasClass(obj,cls)){
+            var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+            obj.className = obj.className.replace(reg,'');
+        }
+    }
+    function addClass(obj,cls){
+        if(!hasClass(obj,cls)){
+            obj.className += ''+cls;
+        }
+    }
+
+
+    window.onload = function(){
+        window.onscroll = function(){
+            var top = document.documentElement.scrollTop?document.documentElement.scrollTop:document.body.scrollTop;
+            var menus = document.getElementById('menu').getElementsByTagName('a');
+            var items = getByClassName(document.getElementById('content'),'item');
+            var currentId = '';
+            for(var j=0;j<items.length;j++){
+                var _item = items[j];
+                var _itemTop = _item.offsetTop;
+                if(top>_itemTop-100){
+                    currentId = _item.id;
+                }else{
+                    break;
+                }
+            }
+            if(currentId){
+                //给正确的menu下的a元素class赋值
+                for(var n=0;n<menus.length;n++){
+                    var _menu = menus[n];
+                    var _href = _menu.href.split('#');
+
+                    if(_href[_href.length-1]!=currentId){
+                        removeClass(_menu,'current');
+                    }else{
+                       addClass(_menu,'current');
+                    }
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

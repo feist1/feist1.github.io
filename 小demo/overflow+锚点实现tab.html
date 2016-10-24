@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 200px;
+            margin: 50px auto;
+        }
+        .main div:first-child{
+            width: 200px;
+            height: 120px;
+            overflow: hidden;
+        }
+        .main div:last-child{
+            margin-top: 5px;
+        }
+        .list{
+            width: 200px;
+            height: 120px;
+            /*border: 1px solid #ff0000;*/
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 120px;
+            text-align: center;
+
+        }
+        #one{
+            background-color: #007aff;
+        }
+        #two{
+            background-color:#008000;
+        }
+        #three{
+            background-color:#ffff00;
+        }
+        #four{
+            background-color:#ffc0cb;
+        }
+        .main div:last-child a{
+            text-decoration: none;
+            border: 1px solid #555555;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            margin: 0 12px;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div>
+        <div class="list" id="one">1</div>
+        <div class="list" id="two">2</div>
+        <div class="list" id="three">3</div>
+        <div class="list" id="four">4</div>
+    </div>
+    <div>
+        <a class="click" href="#one">1</a>
+        <a class="click" href="#two">2</a>
+        <a class="click" href="#three">3</a>
+        <a class="click" href="#four">4</a>
+    </div>
+</div>
+</body>
+</html>

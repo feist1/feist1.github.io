@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 800px;
+            height: 120px;
+            font-size: 100px;
+            color: #ffffff;
+            background-color: #000000;
+            margin: 50px auto;
+            text-align: center;
+
+        }
+        div img{
+            width: 80px;
+            height: 100px;
+        }
+        div span{
+            position: absolute;
+            margin-top: -20px;
+            margin-left: -25px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="img/sz/0.png" />
+        <img src="img/sz/0.png" />
+        &nbsp;<span>:</span>
+        <img src="img/sz/0.png" />
+        <img src="img/sz/0.png" />
+        &nbsp;<span>:</span>
+        <img src="img/sz/0.png" />
+        <img src="img/sz/0.png" />
+    </div>
+</body>
+<script type="text/javascript">
+    // 实现一位数添加0，并实现数字转化成字符串
+    function toDou(n){
+        if(n<10){
+            return '0'+n;
+        }else{
+            return ''+n;//空字符加上数字会变成字符串
+        }
+    }
+    function become(){
+        var oTime=new Date;
+        var str=toDou(oTime.getHours())+toDou(oTime.getMinutes())+toDou(oTime.getSeconds());
+        var oImg=document.getElementsByTagName("img");
+        for(var i=0;i<oImg.length;i++){
+            oImg[i].src="img/sz/"+str[i]+".png";//在IE7以下，不支持str[]所以会出错，
+            // 为了兼容性，会使用charAt（）（返回指定位置的字符）
+        }
+
+    }
+    setInterval(become,1000);//调用定时器时不会马上执行，而是等一秒后运行，所以会出现每次刷新出现全零的情况
+    become();//先运行一次时间函数
+</script>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge"/><!--兼容视图-->
+    <style>
+        body{
+            background-color: #333;
+        }
+        .bg{
+            margin: 0 auto;
+            width: 1288px;
+            height: 610px;
+            background-image: url('img/river.jpg');
+        }
+        .search-box{
+            position: absolute;
+            top: 150px;
+            left: 280px;
+        }
+        .logo{
+            float: left;
+            background-image: url('img/logo.png');
+            width: 107px;
+            height: 53px;
+            margin: -4px 5px 0 0;
+        }
+        .search-item{
+            float: left;
+            padding: 5px;
+            background-color: #fff;
+        }
+        .search-button,.search-text{
+            border: 0;
+        }
+        .search-text{
+            float: left;
+            outline: none;
+            width: 350px;
+            height: 24px;
+            line-height: 24px;
+        }
+        .search-button{
+            float: left;
+            background-image: url('img/search-button.png');
+            width: 29px;
+            height: 29px;
+            cursor: pointer;
+        }
+        .suggest{
+            width: 390px;
+            background-color: #fff;
+            border: 1px solid #999;
+        }
+        .suggest ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .suggest ul li{
+            padding: 3px;
+            line-height: 25px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .suggest ul li:hover{
+            background-color: #e5e5e5;
+            text-decoration: underline;
+        }
+    </style>
+    <title>bing搜索</title>
+</head>
+<body>
+<div class="bg">
+    <div class="search-box">
+        <div class="logo"></div>
+        <form action="http://www.baidu.com" method="get" target="_blank" class="search-item" id="search-form">
+            <input type="text" class="search-text" id="search_input"/>
+            <input type="submit" class="search-button" value=""/>
+        </form>
+    </div>
+    <div class="suggest" id="search-suggest" style="display: none;">
+        <ul id="search-result">
+            <li>搜索结果1</li>
+            <li>搜索结果2</li>
+        </ul>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#search_input').on('keyup',function(){
+        var searchText = $('#search_input').val();
+        $.get('http://www.baidu.com?q='+searchText,function(d){
+            var html='';
+            var data= d.AS.Results[0].Suggests;
+            for(var i=0;i<data.length;i++){
+                html+='<li>'+data[i].Txt+'</li>';
+            }
+            $('#search-result').html(html);
+            $('#search-suggest').show().css({
+                position:'absolute',
+                top:$('#search-form').offset().top+$('#search-form').height()+10+'px',
+                left:$('#search-form').offset().left+'px'
+            });
+        },'json');
+    });
+    $(document).on('click',function(){
+        $('#search-suggest').hide();
+    });
+    $(document).delegate('li','click',function(){
+        var keyword = $(this).text();
+        loction.href='http://www.baidu.com?q='+keyword;
+    });
+</script>
+</body>
+</html>

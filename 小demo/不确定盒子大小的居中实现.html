@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <style>
+        /*第一种不成立的方法*/
+        /*.box{
+            height: 300px;
+            position: relative;
+        }
+        .box div{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: #006699;
+        }*/
+        /*第二种方法*/
+       /* .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #f00;
+            display: -webkit-box;
+            display: box;
+            -webkit-orient:horizontal;
+            -webkit-box-pack:center;
+            -webkit-box-align:center;
+        }*/
+        /*第三种方法*/
+        /*.box{
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }*/
+        /*第四种方法*/
+        /*.box{
+            display: box;
+            -moz-box-pack: center;
+            -moz-box-align: center;
+        }*/
+    </style>
+    <title></title>
+</head>
+<body>
+<div class="box">
+    <div>sdfsfsdf</div>
+</div>
+</body>
+</html>

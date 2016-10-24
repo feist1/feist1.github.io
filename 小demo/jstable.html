@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> new document </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+    <script type="text/javascript">
+
+        window.onload = function(){
+        setColor();}
+            // 鼠标移动改变背景,可以通过给每行绑定鼠标移上事件和鼠标移除事件来改变所在行背景色。
+            function setColor(){
+            var tr=document.getElementsByTagName("tr");
+            for(var i=1;i<tr.length;i++){
+                tr[i].onmouseover=function(){
+                    this.style.backgroundColor="#f2f2f2";
+                };
+                tr[i].onmouseout=function(){
+                    this.style.backgroundColor="#fff";
+                };
+            }
+            }
+
+        // 编写一个函数，供添加按钮调用，动态在表格的最后一行添加子节点；
+            function addRow(){
+                var ao=document.getElementById("table").lastChild;
+                var at=document.createElement("tr");
+                var ath=document.createElement("td");
+                ath.innerHTML="<input type='text' />";
+                at.appendChild(ath);
+                var af=document.createElement("td");
+                af.innerHTML="<input type='text' />";
+                at.appendChild(af);
+                var afi=document.createElement("td");
+                afi.innerHTML="<a href='javascript:;'onclick='deli(this)' >删除</a>";
+                at.appendChild(afi);
+                ao.appendChild(at);
+                setColor();
+            }
+
+
+        // 创建删除函数
+        function deli(obj){
+            //var otes=document.getElementById("table").lastChild;//为什么选择最后一个子节点
+            var otes=obj.parentNode.parentNode.parentNode;
+            var x=otes.removeChild(obj.parentNode.parentNode);
+        }
+    </script>
+</head>
+<body>
+<table border="1" width="50%" id="table">
+    <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>操作</th>
+    </tr>
+
+    <tr>
+        <td>xh001</td>
+        <td>王小明</td>
+        <td><a href="javascript:;"onclick="deli(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+    </tr>
+
+    <tr>
+        <td>xh002</td>
+        <td>刘小芳</td>
+        <td><a href="javascript:;"onclick="deli(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+    </tr>
+
+</table>
+<input type="button" value="添加一行" onclick="addRow()"  />   <!--在添加按钮上添加点击事件  -->
+</body>
+</html>

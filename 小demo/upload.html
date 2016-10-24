@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.css" />
+    <title></title>
+    <style>
+        .input-group-addon{
+            cursor: pointer;
+        }
+        .form-control[readonly]{
+            background-color: #fff;
+        }
+        .btn-delete{
+            color:#f00;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+;        }
+        .show-img{
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FileReader上传图片显示</h1>
+        <p>
+            <button type="button" class="btn btn-info" id="addbtn">添加图片</button>
+        </p>
+        <form action="" id="form">
+
+        </form>
+    </div>
+<script type="text/html" id="temp">
+    <div class="form-group clearfix">
+        <div class="col-xs-8">
+            <div class="input-group">
+                <input class="form-control disabled" readonly type="text" />
+                <input class="hidden" type="file" accept="image/gif,image/png,image/jpeg" />
+                <div class="input-group-addon">选择图片</div>
+            </div>
+            <div>大小：<span class="size"></span></div>
+        </div>
+        <div class="col-xs-4">
+            <div class="show-img">
+                <img src="" alt="..." class="img-thumbnail" />
+            </div>
+            <i class="glyphicon glyphicon-remove btn-delete pull-right"></i>
+        </div>
+    </div>
+</script>
+<script type="text/javascript" src="../lib/jquery/jquery.js"></script>
+<script type="text/javascript" src="../lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    var temp = $('#temp').html();
+    var form = $('#form');
+    $('#addbtn').click(function(){
+        form.append(temp);
+    });
+    form.on('click','.btn-delete',function(){
+       $(this).parents('.form-group').remove();
+    });
+    form.on('click','.input-group-addon',function(){
+       $(this).prev().click();
+    });
+    form.on('change','input[type=file]',function(){
+       var self=this;
+//        input file元素的files属性可以获取上传的文件，是一个文件数组
+        var file=this.files[0];//file属性size name type
+//        判断是否符合
+        if(!/image\/\w+/.test(file.type)){
+            alert('请选择图片');
+            return ;
+        }
+        var reader= new FileReader();
+//        读取完成
+        reader.onload=function(data){
+            $(self).prev().val(file.name);
+            $(self).parents('.form-group').find('.size').text((file.size/1024)+'Mb');
+            $(self).parents('.form-group').find('.img-thumbnail').attr('src',reader.result);
+        }
+//          开始读取
+        reader.onloadstart=function(){
+            console.log('开始读取'+file.name);
+        }
+//        读取中
+        reader.onprogress=function(e){
+            //lengthComputable,loaded,total
+            if(e.lengthComputable){
+                console.log('读取'+file.name+':'+ e.loaded);
+            }
+        }
+//        读取错误
+        reader.onerror=function(){
+            console.log('读取失败！');
+        }
+//        读取结束
+        reader.onloadend=function(){
+            console.log('读取结束'+file.name);
+        }
+        reader.readAsDataURL(file);
+        //此外还有readAsText() readerAsBinaryString() readerAsArrayBuffer()
+    });
+</script>
+
+
+
+</body>
+</html>

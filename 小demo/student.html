@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <style>
+        *{
+            font-family: 'Micsoft Yahei',sans-serif;
+        }
+        body{
+            background-color: #f7f7f7;
+        }
+        #form1{
+            width: 636px;
+            margin: 0 auto;
+        }
+        #form1 legend{
+            font-size: 22px;
+            font-weight: 500;
+        }
+        #form1 label{
+            font-size: 18px;
+            font-weight: 500;
+            margin-left: 30px;
+        }
+        #form1 input,
+        #form1 select{
+            display: block;
+            width: 576px;
+            height: 40px;
+            margin: 24px 30px;
+        }
+        #form1 meter,
+        #form1 progress{
+            display: block;
+            width: 576px;
+            height: 24px;
+            margin: 24px 30px;
+        }
+        #form1 select{
+            border: 1px solid rgb(223,227,239);
+            box-shadow: none;
+            -moz-box-shadow: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        #form1 button{
+            width: 576px;
+            height: 40px;
+            margin: 24px 30px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #fff;
+            background-color:#008000;
+            border: none;
+        }
+    </style>
+    <title>学生档案</title>
+</head>
+<body>
+   <form id="form1">
+       <fieldset>
+           <legend>学生档案</legend>
+           <p>
+               <label for="name">姓名：
+                   <input type="text" name="name" id="name" required autofocus autocomplete="on" placeholder="请输入姓名" />
+               </label>
+           </p>
+           <p>
+               <label for="phone">手机号码：
+                   <input type="text" name="phone" id="phone" placeholder="请输入手机号" required autocomplete="on" />
+               </label>
+           </p>
+           <p>
+               <label for="email">邮箱地址：
+                   <input type="text" name="email" id="email" placeholder="请输入邮箱地址" required autocomplete="on" />
+               </label>
+           </p>
+           <p>
+               <label for="college">所属学院：
+                   <select id="college" name="college">
+                        <option value="col1" selected>Web前端开发学院</option>
+                        <option value="col2">UI设计</option>
+                        <option value="col3">Android开发</option>
+                        <option value="col4">IOS开发</option>
+                        <option value="col5">Php开发</option>
+                        <option value="col6">Ps平面设计</option>
+                   </select>
+               </label>
+           </p>
+           <p>
+               <label for="score">入学成绩：
+                   <input type="number" name="score" id="score" min="0" max="100" step="10" value="10" />
+               </label>
+           </p>
+           <p>
+               <label>基础水平:<meter min="0" max="100" value="10" low="60" high="80" id="met"></meter></label>
+           </p>
+           <p>
+               <label for="start">入学时间:<input type="text" name="start" id="start" /></label>
+           </p>
+           <p>
+               <label for="end">毕业时间：<input type="text" name="end" id="end" /></label>
+           </p>
+           <p>
+               <label>课程进度：<progress min="0" max="100" value="10"></progress></label>
+           </p>
+           <p>
+               <button type="button">保存</button>
+           </p>
+       </fieldset>
+   </form>
+</body>
+<script type="text/javascript">
+    function spo(){
+        var oScr=document.getElementById('score');
+        var oMet=document.getElementById('met');
+        score.oninput=function(){
+            oMet.value=this.value;
+        };
+    }
+    spo();
+</script>
+</html>
